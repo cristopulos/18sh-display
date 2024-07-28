@@ -34,6 +34,12 @@ body {
 	text-align: center;
 }
 
+.value {
+	padding: 10px 20px;
+	font-size: 50px;
+	text-align: center;
+}
+
 @media screen and (max-width: 1024px) {
 	.item {
 		margin: 10px;
@@ -43,6 +49,9 @@ body {
 	}
 	.cash {
 		font-size: 50px;
+	}
+	.value {
+		font-size: 30px;
 	}
 }
 
@@ -466,5 +475,41 @@ body {
 	background-color: #FFFF20;
 }
 
+/* 1889 Shikkoku */
+
+.SAN {
+	color: white;
+	background-color: #80A648;
+}
+
+.IYO {
+	color: white;
+	background-color: #F79B32;
+}
+
+.TAKA {
+	color: white;
+	background-color: #EE3663;
+}
+
+.TER {
+	color: white;
+	background-color: #00ADA3;
+}
+
+.TKR {
+	color: white;
+	background-color: #0091D3;
+}
+
+.AWA {
+	color: white;
+	background-color: #07313F;
+}
+
+.UWA {
+	color: white;
+	background-color: #6B422A;
+}
 	`.trim()
 }
