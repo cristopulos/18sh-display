@@ -8,7 +8,7 @@
 
 Clone the project and install the dependencies:
 
-	git clone https://github.com/msaari/18sh-display.git
+	git clone https://github.com/cristopulos/18sh-display.git
 	cd 18sh-display
 	npm install
 
@@ -38,10 +38,6 @@ It's normal that there's no response at all. Now the server is running on port 3
 	export DISPLAY18SH=http://localhost:3000/18sh/
 
 to connect 18SH to the server running on the same computer. If you want to connect from another computer in the same network, replace `localhost` with the local IP of the computer (something like `192.168.1.1` or so).
-
-## A server for loan
-
-If you don't want to go through the effort of running your own server, I have a server that can be used. Drop me an email at mikko@mikkosaari.fi if you want to use it.
 
 ## Compatibility with 18SH
 
