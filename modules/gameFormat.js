@@ -29,12 +29,14 @@ module.exports = (title, data) => {
 					let item = document.createElement('div')
 					let name = item.appendChild(document.createElement('div'))
 					let cash = item.appendChild(document.createElement('div'))
+					let value = item.appendChild(document.createElement('div'))
 					const className = key.replace(/[^\\w\\d]/g, "_")
 					item.id = className
 					item.className = 'item'
 					name.className = 'name ' + className
 					name.innerHTML = key
 					cash.className = 'cash'
+					value.className = 'value'
 					return item
 				}
 
@@ -54,7 +56,15 @@ module.exports = (title, data) => {
 							for (let item of jsonItems) {
 								const element = document.getElementById(item)
 								if ( element != null ) {
-									element.childNodes[1].innerHTML = jsonData.currency + jsonData.cash[item]
+									element.childNodes.forEach((node) => {
+										if(node.className === 'cash')
+											node.innerHTML = jsonData.currency + jsonData.cash[item].cash
+										else if (node.className === 'value')
+										{
+											if(jsonData.cash[item].value)
+												node.innerHTML = "(" + jsonData.currency + jsonData.cash[item].value + ")"
+										}
+										})
 								} else {
 									const newElement = createItem(item)
 									const parent = document.getElementById("grid")
@@ -80,7 +90,7 @@ module.exports = (title, data) => {
 					request.send()
 				}
 
-				window.setInterval( fetchData, 2000 )
+				window.setInterval( fetchData, 500 )
 
 			</script>
 		</body>
