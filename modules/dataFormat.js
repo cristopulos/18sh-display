@@ -7,9 +7,14 @@ module.exports = (title, data) => {
 	const currencySymbol = data.currency
 
 	const cashHoldings = Object.keys(data.cash).map(key => {
-		const cash = data.currency + data.cash[key]
+		let cash = currencySymbol + data.cash[key].cash
+		let value = `<div class="value"></div>`;
+		if(data.cash[key].value)
+			{
+				value = `<div class="value">(` + currencySymbol + data.cash[key].value + ")</div>"
+			}
 		const className = key.replace(/[^\w\d]/g, "_")
-		return `<div class="item" id="${className}"><div class="name ${className}">${key}</div><div class="cash">${cash}</div></div>`
+		return `<div class="item" id="${className}"><div class="name ${className}">${key}</div><div class="cash">${cash}</div>${value}</div>`
 	})
 	const cashHTML = cashHoldings.join("")
 
