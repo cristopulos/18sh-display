@@ -50,6 +50,10 @@ module.exports = (title, data) => {
 
 					request.addEventListener('load', function () {
 						if (this.readyState === 4 && this.status === 200) {
+
+							const showNetworth = document.getElementById("networth").checked;
+							const showShareSize = document.getElementById("sharesize").checked;
+
 							const jsonData = JSON.parse(this.responseText)
 							document.getElementById("round").innerHTML = jsonData.round
 							const jsonItems = Object.keys(jsonData.cash)
@@ -61,8 +65,17 @@ module.exports = (title, data) => {
 											node.innerHTML = jsonData.currency + jsonData.cash[item].cash
 										else if (node.className === 'value')
 										{
-											if(jsonData.cash[item].value)
+											if(jsonData.cash[item].value && showNetworth)
 												node.innerHTML = "(" + jsonData.currency + jsonData.cash[item].value + ")"
+											else
+												node.innerHTML = ""
+										}
+										else if (node.className === 'name ' + item)
+										{
+											if(jsonData.cash[item].sharesize && showShareSize)
+												node.innerHTML = item + "<div class='sharesize'>(" + jsonData.cash[item].sharesize + ")</div>"
+											else
+												node.innerHTML = item
 										}
 										})
 								} else {

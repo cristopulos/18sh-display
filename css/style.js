@@ -28,6 +28,13 @@ body {
 	text-align: center;
 }
 
+.sharesize {
+	padding: 5px;
+	font-size: 30px;
+	text-align: center;
+	display: inline;
+}
+
 .cash {
 	padding: 20px 40px;
 	font-size: 100px;
@@ -46,6 +53,9 @@ body {
 	}
 	.name {
 		font-size: 40px;
+	}
+	.sharesize {
+		font-size: 15px;
 	}
 	.cash {
 		font-size: 50px;
