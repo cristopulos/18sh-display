@@ -103,7 +103,7 @@ module.exports = (title, data) => {
 					request.send()
 				}
 
-				window.setInterval( fetchData, 500 )
+				window.setInterval( fetchData, 2000 )
 
 			</script>
 		</body>
