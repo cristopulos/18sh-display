@@ -19,7 +19,7 @@
     "url": "https://github.com/msaari/18sh-display.git"
   },
   "engines": {
-    "node": "12.x"
+    "node": "20.x"
   },
   "author": "Mikko Saari",
   "license": "MIT",

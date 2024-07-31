@@ -86,9 +86,9 @@ module.exports = (title, data) => {
 							}
 							const gridNodes = document.getElementById("grid").childNodes
 							for (let item of gridNodes) {
-								const itemKey = item.childNodes[0].innerHTML
-								if (! jsonItems.includes(itemKey)) {
-									document.getElementById(itemKey).remove()
+								const itemKey = item.childNodes[0].innerHTML.split("<")
+								if (! jsonItems.includes(itemKey[0])) {
+									document.getElementById(itemKey[0]).remove()
 								}
 							}
 							const today = new Date()
@@ -103,7 +103,7 @@ module.exports = (title, data) => {
 					request.send()
 				}
 
-				window.setInterval( fetchData, 500 )
+				window.setInterval( fetchData, 2000 )
 
 			</script>
 		</body>
