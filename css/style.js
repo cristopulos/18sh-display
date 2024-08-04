@@ -521,5 +521,162 @@ body {
 	color: white;
 	background-color: #6B422A;
 }
+
+/* 18Chesapeake add-ons*/
+
+.NW {
+	color: white;
+	background-color: #6C0B21;
+}
+
+.LV {
+	color: white;
+	background-color: #FFEF46;
+}
+
+.P_LE {
+	color: white;
+	background-color: #000000;
+}
+
+.SRR {
+	color: white;
+	background-color: #EF463B;
+}
+
+/* 18Mex */
+
+.NRM {
+	color: white;
+	background-color: #6AAE00;
+}
+
+.CPR {
+	color: white;
+	background-color: #F61902;
+}
+
+.PR {
+	color: white;
+	background-color: #FEF000;
+}
+
+.MCR {
+	color: white;
+	background-color: #000000;
+}
+
+.MR {
+	color: white;
+	background-color: #8E8E95;
+}
+
+.SPRM {
+	color: white;
+	background-color: #2F9AE9;
+}
+
+.TMR {
+	color: white;
+	background-color: #FD7804;
+}
+
+.URY {
+	color: white;
+	background-color: #91013C;
+}
+
+.IR {
+	color: white;
+	background-color: #000000;
+}
+
+.SB {
+	color: white;
+	background-color: #000000;
+}
+
+.SER {
+	color: white;
+	background-color: #000000;
+}
+
+/* 18USA */
+
+.CO {
+	color: white;
+	background-color: #273E67;
+}
+
+.GNR {
+	color: white;
+	background-color: #273E67;
+}
+
+.MKTR {
+	color: white;
+	background-color: #389836;
+}
+
+.SPR {
+	color: white;
+	background-color: #389836;
+}
+
+.MPR {
+	color: white;
+	background-color: #503579;
+}
+
+.ATSF {
+	color: white;
+	background-color: #263260;
+}
+
+.SLSFR {
+	color: white;
+	background-color: #D93D30;
+}
+
+.WPR {
+	color: white;
+	background-color: #561B19;
+}
+
+.KCSR {
+	color: white;
+	background-color: #EA413A;
+}
+
+.TPR {
+	color: white;
+	background-color: #84345B;
+}
+
+.SR {
+	color: white;
+	background-color: #3A8039;
+}
+
+.UPR {
+	color: white;
+	background-color: #3A8039;
+}
+
+.NPR {
+	color: white;
+	background-color: #000000;
+}
+
+.TMR {
+	color: white;
+	background-color: #7A776C;
+}
+
+.DRG {
+	color: white;
+	background-color: #C53420;
+}
+
 	`.trim()
 }
