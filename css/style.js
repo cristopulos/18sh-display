@@ -1,5 +1,6 @@
-module.exports = () => {
-	return `
+module.exports = (styleName) => {
+
+	const essentials = `
 body {
 	font-family: sans-serif;
 }
@@ -80,7 +81,168 @@ body {
 	font-size: 32px;
 	margin-right: 2em;
 }
+`
+const usa = `/* 18USA */
+.CO, .C_O {
+	color: yellow;
+	background-color: #273E67;
+}
 
+.GNR {
+	color: black;
+	background-color: #273E67;
+}
+
+.MKTR {
+	color: white;
+	background-color: #389836;
+}
+
+.SPR {
+	color: black;
+	background-color: #389836;
+}
+
+.MPR {
+	color: white;
+	background-color: #503579;
+}
+
+.ATSF {
+	color: white;
+	background-color: #263260;
+}
+
+.SLSFR {
+	color: white;
+	background-color: #D93D30;
+}
+
+.WPR {
+	color: white;
+	background-color: #561B19;
+}
+
+.KCSR {
+	color: white;
+	background-color: #EA413A;
+}
+
+.TPR {
+	color: white;
+	background-color: #84345B;
+}
+
+.SR {
+	color: white;
+	background-color: #3A8039;
+}
+
+.UPR {
+	color: black;
+	background-color: #3A8039;
+}
+
+.NPR {
+	color: white;
+	background-color: #000000;
+}
+
+.TMR {
+	color: black;
+	background-color: #7A776C;
+}
+
+.DRG {
+	color: white;
+	background-color: #C53420;
+}
+
+.NWR {
+	color: white;
+	background-color: #3F1913;
+}
+
+.PR, .PRR {
+	color: black;
+	background-color: #A7C26E;
+}
+
+.ICR {
+	color: white;
+	background-color: #576337;
+}
+
+.NYC {
+	color: white;
+	background-color: #000000;
+}
+
+.BO, .B_O {
+	color: white;
+	background-color: #3B5D82;
+}
+
+`;
+
+const mex = `/* 18Mex */
+
+.NRM {
+	color: white;
+	background-color: #6AAE00;
+}
+
+.CPR {
+	color: white;
+	background-color: #F61902;
+}
+
+.PR {
+	color: white;
+	background-color: #FEF000;
+}
+
+.MCR {
+	color: white;
+	background-color: #000000;
+}
+
+.MR {
+	color: white;
+	background-color: #8E8E95;
+}
+
+.SPRM {
+	color: white;
+	background-color: #2F9AE9;
+}
+
+.TMR {
+	color: white;
+	background-color: #FD7804;
+}
+
+.URY {
+	color: white;
+	background-color: #91013C;
+}
+
+.IR {
+	color: white;
+	background-color: #000000;
+}
+
+.SB {
+	color: white;
+	background-color: #000000;
+}
+
+.SER {
+	color: white;
+	background-color: #000000;
+}`
+
+	const defaultStyle = `
 /* 1846 (and others) */
 
 .GT {
@@ -542,141 +704,23 @@ body {
 .SRR {
 	color: white;
 	background-color: #EF463B;
+}`
+	
+let style = defaultStyle
+
+switch(styleName)
+{
+	case "18usa":
+		{
+			style = usa
+		}
+		break
+	case "18mex":
+		style = mex
+		break
+	default:
+		style = defaultStyle
+		break
 }
-
-/* 18Mex */
-
-.NRM {
-	color: white;
-	background-color: #6AAE00;
-}
-
-.CPR {
-	color: white;
-	background-color: #F61902;
-}
-
-.PR {
-	color: white;
-	background-color: #FEF000;
-}
-
-.MCR {
-	color: white;
-	background-color: #000000;
-}
-
-.MR {
-	color: white;
-	background-color: #8E8E95;
-}
-
-.SPRM {
-	color: white;
-	background-color: #2F9AE9;
-}
-
-.TMR {
-	color: white;
-	background-color: #FD7804;
-}
-
-.URY {
-	color: white;
-	background-color: #91013C;
-}
-
-.IR {
-	color: white;
-	background-color: #000000;
-}
-
-.SB {
-	color: white;
-	background-color: #000000;
-}
-
-.SER {
-	color: white;
-	background-color: #000000;
-}
-
-/* 18USA */
-
-.CO {
-	color: white;
-	background-color: #273E67;
-}
-
-.GNR {
-	color: white;
-	background-color: #273E67;
-}
-
-.MKTR {
-	color: white;
-	background-color: #389836;
-}
-
-.SPR {
-	color: white;
-	background-color: #389836;
-}
-
-.MPR {
-	color: white;
-	background-color: #503579;
-}
-
-.ATSF {
-	color: white;
-	background-color: #263260;
-}
-
-.SLSFR {
-	color: white;
-	background-color: #D93D30;
-}
-
-.WPR {
-	color: white;
-	background-color: #561B19;
-}
-
-.KCSR {
-	color: white;
-	background-color: #EA413A;
-}
-
-.TPR {
-	color: white;
-	background-color: #84345B;
-}
-
-.SR {
-	color: white;
-	background-color: #3A8039;
-}
-
-.UPR {
-	color: white;
-	background-color: #3A8039;
-}
-
-.NPR {
-	color: white;
-	background-color: #000000;
-}
-
-.TMR {
-	color: white;
-	background-color: #7A776C;
-}
-
-.DRG {
-	color: white;
-	background-color: #C53420;
-}
-
-	`.trim()
+	return (essentials + style).trim()
 }

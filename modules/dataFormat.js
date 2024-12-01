@@ -1,7 +1,7 @@
 "use strict"
 
 module.exports = (title, data) => {
-	let css = require("../css/style")()
+	let css = require("../css/style")(data.style)
 
 	const round = data.round
 	const currencySymbol = data.currency

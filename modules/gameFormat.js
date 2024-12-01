@@ -3,7 +3,7 @@
 const dataFormat = require("./dataFormat")
 
 module.exports = (title, data) => {
-	let css = require("../css/style")()
+	let css = require("../css/style")(data.style)
 
 	const content = dataFormat(title, data)
 
@@ -19,7 +19,27 @@ module.exports = (title, data) => {
 			</div>
 			<script type="text/javascript">
 				let orderCounter = -1
+				
 
+				function convertHTML(str) {
+					let result = str;
+
+  					const symbols = {
+    					"&amp;" : "&",
+    					"&lt" : "<",
+    					"&gt;" : ">",
+    					"&quot;" : "\\"",
+    					"&apos;" : "'"
+  					}
+						
+  					for (const symbol in symbols) {
+    					if (str.indexOf(symbol) >= 0) {
+      						result = result.replaceAll(symbol, symbols[symbol])
+    					}
+  					}
+  					return result;
+				}
+				
 				function setOrder(target) {
 					target.target.parentNode.style.order = orderCounter
 					orderCounter--
@@ -58,7 +78,8 @@ module.exports = (title, data) => {
 							document.getElementById("round").innerHTML = jsonData.round
 							const jsonItems = Object.keys(jsonData.cash)
 							for (let item of jsonItems) {
-								const element = document.getElementById(item)
+								const sanitazed_item = item.replace(/[^\\w\\d]/g, "_")
+								const element = document.getElementById(sanitazed_item)
 								if ( element != null ) {
 									element.childNodes.forEach((node) => {
 										if(node.className === 'cash')
@@ -87,8 +108,8 @@ module.exports = (title, data) => {
 							const gridNodes = document.getElementById("grid").childNodes
 							for (let item of gridNodes) {
 								const itemKey = item.childNodes[0].innerHTML.split("<")
-								if (! jsonItems.includes(itemKey[0])) {
-									document.getElementById(itemKey[0]).remove()
+								if (! jsonItems.includes(convertHTML(itemKey[0]))) {
+									document.getElementById(convertHTML(itemKey[0])).remove()
 								}
 							}
 							const today = new Date()
