@@ -242,6 +242,38 @@ const mex = `/* 18Mex */
 	background-color: #000000;
 }`
 
+const Sicily_1849 = `/* 1849 */
+
+.AFG {
+	color: white;
+	background-color: #F3470C;
+}
+
+.ATA {
+	color: black;
+	background-color: #007B00;
+}
+
+.CTL {
+	color: black;
+	background-color: #FFE215;
+}
+
+.IFT {
+	color: white;
+	background-color: #003C80;
+}
+
+.RCS {
+	color: black;
+	background-color: #FF8040;
+}
+
+.SFA {
+	color: black;
+	background-color: #C13C7D;
+}`
+
 	const defaultStyle = `
 /* 1846 (and others) */
 
@@ -711,16 +743,18 @@ let style = defaultStyle
 switch(styleName)
 {
 	case "18usa":
-		{
-			style = usa
-		}
+		style = usa
 		break
 	case "18mex":
 		style = mex
 		break
+	case "1849":
+		style = Sicily_1849
+		break;
 	default:
 		style = defaultStyle
 		break
 }
-	return (essentials + style).trim()
+
+return (essentials + style).trim()
 }
